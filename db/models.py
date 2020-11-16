@@ -144,7 +144,6 @@ class QuerySet:
 
             cls = ", ".join('%s'%k for k in kwargs.keys())
             vls = ", ".join("'%s'"%k for k in kwargs.values())
-
             gv.cr[self.table].execute("INSERT INTO {} ({}) VALUES({})".format(self.table, cls, vls))
             if not transaction: gv.db[self.table].commit()
 

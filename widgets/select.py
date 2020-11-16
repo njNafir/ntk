@@ -7,7 +7,7 @@ from ntk.widgets.tk import Tk
 from ntk.objects import gv
 
 class SelectBox(Entry):
-    def __init__(self, root, values=['Values:list/touple'], height=10, default=True, selectcommand=False, bg='#F4F4F4', *args, **kwargs):
+    def __init__(self, root, values=['Values:list/touple'], height=10, default=True, selectcommand=False, bg='#F4F4F4', onclick='', *args, **kwargs):
 
         super(SelectBox, self).__init__(root, bg=bg, abg=kwargs.pop('abg', bg), focusinbg=kwargs.pop('focusinbg', bg), hlbg=kwargs.pop('hlbg', bg), hlc=kwargs.pop('hlc', bg), focusinhlc=kwargs.pop('focusinhlc', bg), **kwargs)
 
@@ -16,6 +16,7 @@ class SelectBox(Entry):
         self.values = self.mvalues = values
         self.root = root
         self.selectcommand = selectcommand
+        self.onclick = onclick
 
         setattr(gv, str(self) + ':list', False)
 
@@ -28,6 +29,11 @@ class SelectBox(Entry):
     def show_selection(self, show=False, values=False):
         if type(values) != bool: self.values = self.mvalues = values
         if show: self.list_opened = False
+
+        if self.onclick == 'clean':
+            self.set('')
+        elif self.onclick != '':
+            self.set(self.onclick)
 
         if not self.list:
             rx = self.winfo_rootx()
