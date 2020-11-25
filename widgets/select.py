@@ -26,13 +26,15 @@ class SelectBox(Entry):
         if default:
             self.set(default if default != True else values[0])
 
-    def show_selection(self, e, show=False, values=False):
+    def show_selection(self, e=None, show=False, values=False):
         if type(values) != bool: self.values = self.mvalues = values
         if show: self.list_opened = False
 
         if self.onclick == 'clean':
-            if e.__dict__['type'].__dict__['_name_'] == 'ButtonPress':
-                self.set('')
+            if e:
+                if e.__dict__['type'].__dict__['_name_'] == 'ButtonPress':
+                    self.set('')
+
         elif self.onclick != '':
             self.set(self.onclick)
 
