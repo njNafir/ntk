@@ -20,18 +20,19 @@ class SelectBox(Entry):
 
         setattr(gv, str(self) + ':list', False)
 
-        self.bind("<Button-1>", lambda e: self.show_selection())
-        self.bind('<KeyRelease>', lambda event: self.typed())
+        self.bind("<Button-1>", lambda e: self.show_selection(e))
+        self.bind('<KeyRelease>', lambda e: self.typed(e))
 
         if default:
             self.set(default if default != True else values[0])
 
-    def show_selection(self, show=False, values=False):
+    def show_selection(self, e, show=False, values=False):
         if type(values) != bool: self.values = self.mvalues = values
         if show: self.list_opened = False
 
         if self.onclick == 'clean':
-            self.set('')
+            if e.__dict__['type'].__dict__['_name_'] == 'ButtonPress':
+                self.set('')
         elif self.onclick != '':
             self.set(self.onclick)
 
@@ -119,7 +120,7 @@ class SelectBox(Entry):
         if self.selectcommand:
             self.selectcommand()
 
-    def typed(self):
+    def typed(self, e):
         tx = self.get()
 
         new_values = []
@@ -137,8 +138,8 @@ class SelectBox(Entry):
             self.list.destroy()
             self.list = False
 
-        self.show_selection()
-        self.show_selection()
+        self.show_selection(e)
+        self.show_selection(e)
 
     def destroy_list(self, e):
         ex = e.x_root
