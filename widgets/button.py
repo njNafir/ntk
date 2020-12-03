@@ -113,7 +113,14 @@ class Button(tkButton):
         # so you don't need to call it again
         # you can set row column etc in main class instead
 
-        self.grid(row=row, column=column, padx=padx, pady=pady, ipadx=ipadx, ipady=ipady) # set grid system
+        self.grid(
+                row=row,
+                column=column,
+                padx=padx,
+                pady=pady,
+                ipadx=ipadx,
+                ipady=ipady
+            ) # set grid system
 
         # setting hover effect in button widgets
         # when button will be hovered a background
