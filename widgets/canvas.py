@@ -68,10 +68,15 @@ class Canvas(tkCanvas):
                                      *args, **kwargs # extra arguments and keyword arguments will passed
                                 )
 
-        self.scr_x1, \ # scroll region x1
-        self.scr_y1, \ # scroll region y1
-        self.scr_x2, \ # scroll region x2
-        self.scr_y2 = scrollregion # scroll region y2
+        # scroll region x1
+        # scroll region y1
+        # scroll region x2
+        # scroll region y2
+
+        self.scr_x1, \
+        self.scr_y1, \
+        self.scr_x2, \
+        self.scr_y2 = scrollregion
 
         self.grid(
                 row=row, # grid configure row
@@ -159,10 +164,15 @@ class Canvas(tkCanvas):
         # canvas.increase_scrollregion(x1, y1, x2, y2) is used to
         # increase scrollregion size of a canvas window
 
-        self.scr_x1, \ # scroll region x1
-        self.scr_y1, \ # scroll region y1
-        self.scr_x2, \ # scroll region x2
-        self.scr_y2 = self.scr_x1 + (x1 if x1 else 0), \ # scroll region y2
+        # scroll region x1
+        # scroll region y1
+        # scroll region x2
+        # scroll region y2
+
+        self.scr_x1, \
+        self.scr_y1, \
+        self.scr_x2, \
+        self.scr_y2 = self.scr_x1 + (x1 if x1 else 0), \
                       self.scr_y1 + (y1 if y1 else 0), \
                       self.scr_x2 + (x2 if x2 else 0), \
                       self.scr_y2 + (y2 if y2 else 0)
@@ -184,10 +194,15 @@ class Canvas(tkCanvas):
         # canvas.decrease_scrollragion(x1, y1, x2, y2) is used to
         # decrease scrollregion size of a canvas window
 
-        self.scr_x1, \ # scroll region x1
-        self.scr_y1, \ # scroll region y1
-        self.scr_x2, \ # scroll region x2
-        self.scr_y2 = self.scr_x1 - (x1 if x1 else 0), \ # scroll region y2
+        # scroll region x1
+        # scroll region y1
+        # scroll region x2
+        # scroll region y2
+
+        self.scr_x1, \
+        self.scr_y1, \
+        self.scr_x2, \
+        self.scr_y2 = self.scr_x1 - (x1 if x1 else 0), \
                       self.scr_y1 - (y1 if y1 else 0), \
                       self.scr_x2 - (x2 if x2 else 0), \
                       self.scr_y2 - (y2 if y2 else 0)
