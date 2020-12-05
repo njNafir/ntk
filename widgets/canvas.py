@@ -28,7 +28,7 @@ class Canvas(tkCanvas):
     # and unknown params
     # and args to tkinter canvas
 
-    # so if it cause an error most probably it's getting from tkinter button object
+    # so if it cause an error most probably it's getting from tkinter canvas object
     # see your all arguments and keywords is supporting by ntk Canvas or tkinter canvas
 
     def __init__(self,
