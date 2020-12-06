@@ -24,7 +24,7 @@ class Scrollbar(tkScrollbar):
     # and args to tkinter scrollbar
 
     # so if it cause an error most probably it's getting from tkinter scrollbar object
-    # see your all arguments and keywords is supporting by Scrollbar or tkinter panedwindow
+    # see your all arguments and keywords is supporting by Scrollbar or tkinter scrollbar
 
     def __init__(self,
                  root, # root is a master window to place this scrollbar into it
