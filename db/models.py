@@ -447,6 +447,8 @@ class Retrieve:
 
             except Exception as e:
 
+                print(e)
+
                 # if something is wrong with executing query
                 # wait some time and retry again after some time
 
