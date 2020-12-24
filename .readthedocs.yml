@@ -20,10 +20,10 @@ formats:
 # Optionally set the version of Python and requirements required to build your docs
 python:
   version: 3.7
-  install:
-    - requirements: requirements.txt
-    - method: pip
-      path: docs
+  # install:
+  # - requirements: requirements.txt
+  # - method: pip
+  #   path: docs
 
   #     extra_requirements:
   #       - docs
