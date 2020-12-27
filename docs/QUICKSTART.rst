@@ -7,10 +7,10 @@ good looking and os level implementation.
 
 Look how easy it is to use:
 
-    ```from ntk import *
-    root = Tk()
-    # Get your stuff done
-    root.mainloop()```
+    ``from ntk import *;
+    root = Tk();
+    # Get your stuff done;
+    root.mainloop()``
 
 Features
 --------
@@ -25,7 +25,7 @@ Installation
 
 Install ntk by running:
 
-    pip install ntk
+    ``pip install ntk``
 
 Contribute
 ----------
