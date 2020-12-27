@@ -1,4 +1,4 @@
-SkyTrip
+Overview
 ========
 
 ntk will solve your problem when you can't learn and implement,
@@ -7,10 +7,10 @@ good looking and os level implementation.
 
 Look how easy it is to use:
 
-    from ntk import *
+    ```from ntk import *
     root = Tk()
     # Get your stuff done
-    root.mainloop()
+    root.mainloop()```
 
 Features
 --------
