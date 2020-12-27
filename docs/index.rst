@@ -8,6 +8,7 @@ Welcome to ntk's documentation!
     :caption: Contents:
 
     CODE_OF_CONDUCT
+    QUICKSTART
     HISTORY
     
 
