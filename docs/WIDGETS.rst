@@ -9,5 +9,3 @@ good looking and os level implementation.
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
-
-    button
