@@ -10,4 +10,4 @@ good looking and os level implementation.
     :maxdepth: 2
     :caption: Contents:
 
-    BUTTON
+    button
