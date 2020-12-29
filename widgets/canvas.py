@@ -104,7 +104,7 @@ class Canvas(tkCanvas):
                                 weight=gridrow # row weight
                             )
 
-    def select_clicked(self, e):
+    def select_clicked(self, e=None):
 
         # check if clicked object is a text containing object
 
