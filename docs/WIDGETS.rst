@@ -10,4 +10,11 @@ good looking and os level implementation.
     :maxdepth: 2
     :caption: Contents:
 
+    tk
+    toplevel
+    panedwindow
+    notebook
+    frame
+    canvas
+    scroller
     button
