@@ -7,7 +7,7 @@ python tkinter to create desktop application in concern to,
 good looking and os level implementation.
 
 ntk Button is extended version of tkinter base Button with more functionality and eye touchable design, to use
-this Button widget we need to import furst it from ntk by
+this Button widget we need to import first it from ntk by
 
     from ntk import Button
 
