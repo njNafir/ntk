@@ -18,4 +18,9 @@ good looking and os level implementation.
     canvas
     scroller
     entry
+    select
+    image
+    label
+    text
+    combo
     button
