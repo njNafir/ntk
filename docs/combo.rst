@@ -23,30 +23,30 @@ below to get your desired window size and style
 
 available parameters are:
 
-    * root, # root is a master window to place this combobox into it
-    * class_="TCombobox", # combobox class which can be inherited
-    * cursor="arrow", # cursor style when mouse over combobox
-    * exportselection=1, # copy selected text when selection appeared in combobox
-    * height=24, # height of value list
-    * justify="left", # justify combobox text left right or center
-    * postcommand="", # combobox postcommand when selected item
-    * style="TCombobox", # combobox style object
-    * takefocus=1, # set take focus to 0 if you don't want to focusing effect
-    * textvariable=False, # combobox text variable, to get and set value dynamically
-    * validate=None, # validate
-    * validatecommand=False, # validate command
-    * values=['No more item'], # combo values to set as a list
-    * width=24, # combobox width
-    * xscrollcommand=False, # combobox left right scrolling
-    * font=("Calibri", 10), # combobox font style
-    * row=0, # row position
-    * column=0, # column position
-    * padx=0, # padding for left and right
-    * pady=0, # padding for top and bottom
-    * ipady=2, # internal padding for top and bottom
-    * sticky='w', # combobox sticky position w, e, s, n, we, ne, se etc
-    * text="-----", # default text in combobox widget
-    * default=0, # default text index from value list
+    * ``root``, # root is a master window to place this combobox into it
+    * ``class_="TCombobox"``, # combobox class which can be inherited
+    * ``cursor="arrow"``, # cursor style when mouse over combobox
+    * ``exportselection=1``, # copy selected text when selection appeared in combobox
+    * ``height=24``, # height of value list
+    * ``justify="left"``, # justify combobox text left right or center
+    * ``postcommand=""``, # combobox postcommand when selected item
+    * ``style="TCombobox"``, # combobox style object
+    * ``takefocus=1``, # set take focus to 0 if you don't want to focusing effect
+    * ``textvariable=False``, # combobox text variable, to get and set value dynamically
+    * ``validate=None``, # validate
+    * ``validatecommand=False``, # validate command
+    * ``values=['No more item']``, # combo values to set as a list
+    * ``width=24``, # combobox width
+    * ``xscrollcommand=False``, # combobox left right scrolling
+    * ``font=("Calibri", 10)``, # combobox font style
+    * ``row=0``, # row position
+    * ``column=0``, # column position
+    * ``padx=0``, # padding for left and right
+    * ``pady=0``, # padding for top and bottom
+    * ``ipady=2``, # internal padding for top and bottom
+    * ``sticky='w'``, # combobox sticky position w, e, s, n, we, ne, se etc
+    * ``text="-----"``, # default text in combobox widget
+    * ``default=0``, # default text index from value list
 
 an example of creating Combobox widget:
 

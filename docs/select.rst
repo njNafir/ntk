@@ -24,13 +24,13 @@ you need to pass parameters described below
 
 available parameters are:
 
-    * root, # root is a master window to place this entry into it
-    * values=['Values:list/tuple'], # values can be a list or tuple
-    * height=10, # height of value list
-    * default=True, # default value in entry box
-    * selectcommand=False, # to perform when any value is selected
-    * bg='#F4F4F4', # background color of select box
-    * onclick='', # perform set rule when entry box clicked
+    * ``root``, # root is a master window to place this entry into it
+    * ``values=['Values:list/tuple']``, # values can be a list or tuple
+    * ``height=10``, # height of value list
+    * ``default=True``, # default value in entry box
+    * ``selectcommand=False``, # to perform when any value is selected
+    * ``bg='#F4F4F4``', # background color of select box
+    * ``onclick=''``, # perform set rule when entry box clicked
 
 an example of creating SelectBox widget:
 
@@ -54,9 +54,9 @@ SelectBox.show_selection() method is can be used to pop up the list of selection
 
 it has passable three parameters
 
-    * e=None, # event object
-    * show=False, # list show or hide
-    * values=False # pass value list another time
+    * ``e=None``, # event object
+    * ``show=False``, # list show or hide
+    * ``values=False`` # pass value list another time
 
 SelectBox.update_list() method is can be used to reset list of values from box
 

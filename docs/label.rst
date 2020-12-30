@@ -23,27 +23,27 @@ you need to pass parameters described below
 
 available parameters are:
 
-    * root, # root is a master window to place this label into it
-    * text="New label", # label text value
+    * ``root``, # root is a master window to place this label into it
+    * ``text="New label"``, # label text value
     * # bg="bg-light",
     * # fg="fg-dark",
-    * var=None, # label text variable
-    * case="lower", # text style lower upper etc
-    * width=False, # label width
-    * image=None, # label image
-    * image_file=False, # image file to getting image object from it
-    * image_size=(32, 32), # image size to getting image in custom size from image file
-    * position="left", # image and text position left right center
-    * font=('Calibri', 10), # label font style
-    * row=0, # grid row position
-    * column=0, # grid column position
-    * rowspan=1, # grid row span
-    * columnspan=1, # grid column span
-    * padx=(5, 5), # grid padding left and right
-    * pady=(5, 5), # grid padding top and bottom
-    * ipady=10, # grid internal padding top and bottom
-    * sticky='w', # grid sticky position
-    * length=False, # label wrap length width
+    * ``var=None``, # label text variable
+    * ``case="lower"``, # text style lower upper etc
+    * ``width=False``, # label width
+    * ``image=None``, # label image
+    * ``image_file=False,`` # image file to getting image object from it
+    * ``image_size=(32, 32``), # image size to getting image in custom size from image file
+    * ``position="left"``, # image and text position left right center
+    * ``font=('Calibri', 10)``, # label font style
+    * ``row=0``, # grid row position
+    * ``column=0``, # grid column position
+    * ``rowspan=1``, # grid row span
+    * ``columnspan=1``, # grid column span
+    * ``padx=(5, 5)``, # grid padding left and right
+    * ``pady=(5, 5)``, # grid padding top and bottom
+    * ``ipady=10``, # grid internal padding top and bottom
+    * ``sticky='w'``, # grid sticky position
+    * ``length=False``, # label wrap length width
 
 an example of creating Label widget:
 

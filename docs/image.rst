@@ -23,10 +23,10 @@ you need to pass parameters described size, orient, style
 
 available parameters are:
 
-    * file=False, # file url
-    * resize=False, # resize param is a tuple acceptable by PIL resize
-    * format="png", # get and save images in this file format
-    * pillow=True, # if pillow is False, ntk will be return a object which opened by tkinter PhotoImage
+    * ``file=False``, # file url
+    * ``resize=False``, # resize param is a tuple acceptable by PIL resize
+    * ``format="png"``, # get and save images in this file format
+    * ``pillow=True``, # if pillow is False, ntk will be return a object which opened by tkinter PhotoImage
 
 an example of creating ImageFile widget:
 
