@@ -17,4 +17,5 @@ good looking and os level implementation.
     frame
     canvas
     scroller
+    entry
     button
