@@ -3,6 +3,11 @@
 Welcome to ntk's documentation!
 =====================================
 
+.. autosummary::
+    :toctree: stubs
+
+    QUICKSTART
+
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
@@ -15,14 +20,6 @@ Welcome to ntk's documentation!
     UTILS
     HISTORY
     
-
-.. autosummary::
-    :toctree: stubs
-
-    ntk.widgets.tk.Tk
-    ntk.db.models.Model
-
-
 Indices and tables
 ==================
 
