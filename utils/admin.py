@@ -34,7 +34,7 @@ def is_admin():
 
         return False
 
-def run_as_admin(python_exe, cmdLine=None, wait=True):
+def run_as_admin(python_exe=sys.executable, cmdLine=None, wait=True):
 
     # run_as_admin function will try to run this program in an admin mode
 
@@ -105,5 +105,5 @@ def run_as_admin(python_exe, cmdLine=None, wait=True):
         # if wait is False set process to None
         rc          = None
 
-    # return True if everything is alright 
+    # return True if everything is alright
     return True
