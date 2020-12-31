@@ -10,5 +10,5 @@ good looking and os level implementation.
     :maxdepth: 2
     :caption: Contents:
 
-    utils.admin
-    utils.util
+    admin
+    util
