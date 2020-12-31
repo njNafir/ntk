@@ -9,10 +9,10 @@ Welcome to ntk's documentation!
 
     CODE_OF_CONDUCT
     QUICKSTART
+    OBJECTS
     DB
     WIDGETS
     UTILS
-    OBJECTS
     HISTORY
     
 
