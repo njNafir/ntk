@@ -9,7 +9,10 @@ from ntk.utils import *
 # Import pyperclip
 # pyperclip is used to copy and paste canvas element text when it's selected
 
-import pyperclip
+try:
+    import pyperclip
+except:
+    print('pyperclip not found, it can be installed by\npip install pyperclip')
 
 class Canvas(tkCanvas):
 

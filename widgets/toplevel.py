@@ -35,7 +35,7 @@ class Toplevel(tkToplevel):
 
     def __init__(self,
                  root=None, # root is a master window to place this toplevel into it
-                 title="Toplevel", # title to showing on top bar
+                 title="ntk toplevel", # title to showing on top bar
                  bg="bg-white", # background color, default is bootstrap referenced white
                  bd=0, # border width
                  class_="Toplevel", # class is important when you want to inherit any design or some methods

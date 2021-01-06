@@ -136,7 +136,7 @@ class Notebook(tkNotebook):
 
         self.config(style=self.style)
 
-    def add(self, child, text, width=16, image=False, compound="left", underline=99, sticky="wn", padding=0):
+    def add(self, child, text='ntk tab', width=16, image=False, compound="left", underline=99, sticky="wn", padding=0):
 
         # notebook.add method is used to add a tab in notebook
         # it takes up most eight parameters

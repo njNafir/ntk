@@ -1,6 +1,9 @@
 # Import PIL Image and ImageTk to use it
 
-from PIL import Image as pilImage, ImageTk as pilImageTk
+try:
+    from PIL import Image as pilImage, ImageTk as pilImageTk
+except:
+    print('pillow not found, it can be installed by\npip install pillow')
 
 # Import gv object from ntk
 

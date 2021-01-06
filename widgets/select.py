@@ -64,7 +64,7 @@ class SelectBox(Entry):
 
     def __init__(self,
                  root, # root is a master window to place this entry into it
-                 values=['Values:list/tuple'], # values can be a list or tuple
+                 values=['ntk option 1', 'ntk option 2' 'ntk option 3'], # values can be a list or tuple
                  height=10, # height of value list
                  default=True, # default value in entry box
                  selectcommand=False, # to perform when any value is selected

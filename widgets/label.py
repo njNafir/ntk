@@ -8,7 +8,9 @@ from ntk.utils import *
 
 # Import Image ImageTk from PIL
 
-from PIL import Image, ImageTk
+try:
+    from PIL import Image, ImageTk
+except: pass
 
 class Label(tkLabel):
 
@@ -32,7 +34,7 @@ class Label(tkLabel):
 
     def __init__(self,
                  root, # root is a master window to place this label into it
-                 text="New label", # label text value
+                 text="ntk label", # label text value
                  # bg="bg-light",
                  # fg="fg-dark",
                  var=None, # label text variable

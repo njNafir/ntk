@@ -55,7 +55,7 @@ class Button(tkButton):
                  rinterval=2000, # repeat interval
                  state="normal", # default state normal disable or active
                  takefocus=1, # set button property if button can take focus or not
-                 text="Button", # button text value
+                 text="ntk button", # button text value
                  tvar=None, # text variable to set and get dynamic value
                  underline=99, # underline position for text chars
                  width=16, # button width
