@@ -2,9 +2,9 @@
 
 from tkinter import Button as tkButton
 
-# Import all util from ntk.utils
+# Import all util from snipp.utils
 
-from ntk.utils import *
+from snipp.utils import *
 
 class Button(tkButton):
 
@@ -24,7 +24,7 @@ class Button(tkButton):
     # and args to tkinter button
 
     # so if it cause an error most probably it's getting from tkinter button object
-    # see your all arguments and keywords is supporting by ntk Button or tkinter button
+    # see your all arguments and keywords is supporting by snipp Button or tkinter button
 
     def __init__(self,
                  root, # root is a master window to place this button into it
@@ -55,7 +55,7 @@ class Button(tkButton):
                  rinterval=2000, # repeat interval
                  state="normal", # default state normal disable or active
                  takefocus=1, # set button property if button can take focus or not
-                 text="ntk button", # button text value
+                 text="Button", # button text value
                  tvar=None, # text variable to set and get dynamic value
                  underline=99, # underline position for text chars
                  width=16, # button width
@@ -140,3 +140,9 @@ class Button(tkButton):
                                     fg=color(afg) if self['state'] == 'active' else color(fg)
                                 )
                             )
+
+    def config(self, **kwargs):
+        super(Button, self).config(kwargs)
+
+        for key, value in kwargs.items():
+            setattr(self, key, value)

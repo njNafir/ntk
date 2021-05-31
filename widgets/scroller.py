@@ -2,9 +2,9 @@
 
 from tkinter import Scrollbar as tkScrollbar
 
-# Import all util from ntk.utils
+# Import all util from snipp.utils
 
-from ntk.utils import *
+from snipp.utils import *
 
 class Scrollbar(tkScrollbar):
 

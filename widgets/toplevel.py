@@ -2,13 +2,13 @@
 
 from tkinter import Toplevel as tkToplevel
 
-# Import all objects from ntk.objects
+# Import all objects from snipp.objects
 
-from ntk.objects import *
+from snipp.objects import *
 
-# Import all util from ntk.utils
+# Import all util from snipp.utils
 
-from ntk.utils import *
+from snipp.utils import *
 
 class Toplevel(tkToplevel):
 
@@ -35,7 +35,7 @@ class Toplevel(tkToplevel):
 
     def __init__(self,
                  root=None, # root is a master window to place this toplevel into it
-                 title="ntk toplevel", # title to showing on top bar
+                 title="Toplevel", # title to showing on top bar
                  bg="bg-white", # background color, default is bootstrap referenced white
                  bd=0, # border width
                  class_="Toplevel", # class is important when you want to inherit any design or some methods

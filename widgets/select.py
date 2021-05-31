@@ -1,26 +1,28 @@
 # Import Tkinter Entry to use it and modify default
 
-from ntk.widgets.entry import Entry
+from snipp.widgets.entry import Entry
 
-# Import all util from ntk.utils
+# Import all util from snipp.utils
 
-from ntk.utils import *
+from snipp.utils import *
 
 # Import Tkinter Toplevel to use it for list window
 
-from ntk.widgets.toplevel import Toplevel
+from snipp.widgets.toplevel import Toplevel
 
 # Import Tkinter Toplevel to use it for list container
 
-from ntk.widgets.canvas import Canvas
+from snipp.widgets.canvas import Canvas
+from snipp.widgets.button import Button
 
 
-# from ntk.widgets.scroller import Scrollbar
-# from ntk.widgets.tk import Tk
+# from snipp.widgets.scroller import Scrollbar
+# from snipp.widgets.tk import Tk
 
-# Import gv objects from ntk.objects
+# Import gv objects from snipp.objects
 
-from ntk.objects import gv
+from snipp.objects import gv
+
 
 class SelectBox(Entry):
 
@@ -40,7 +42,7 @@ class SelectBox(Entry):
     # and args to tkinter entry
 
     # so if it cause an error most probably it's getting from tkinter entry object
-    # see your all arguments and keywords is supporting by ntk Entry or tkinter Entry
+    # see your all arguments and keywords is supporting by snipp Entry or tkinter Entry
 
     # it contain a values parameter, which can be a list or tuple
     # this values will be rendered as a list which is
@@ -64,7 +66,7 @@ class SelectBox(Entry):
 
     def __init__(self,
                  root, # root is a master window to place this entry into it
-                 values=['ntk option 1', 'ntk option 2' 'ntk option 3'], # values can be a list or tuple
+                 values=['Values:list/tuple'], # values can be a list or tuple
                  height=10, # height of value list
                  default=True, # default value in entry box
                  selectcommand=False, # to perform when any value is selected
@@ -269,6 +271,8 @@ class SelectBox(Entry):
                                                                                     # when list window is highlighted
                                  topbar=False # pass topbar parameter as false, it will not contain top bar
                             )
+
+            self.list.transient(self.root)
 
             # next define main list as list body
 

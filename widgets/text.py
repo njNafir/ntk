@@ -2,9 +2,9 @@
 
 from tkinter import Text as tkText
 
-# Import all util from ntk.utils
+# Import all util from snipp.utils
 
-from ntk.utils import *
+from snipp.utils import *
 
 class Text(tkText):
 
@@ -146,14 +146,14 @@ class Text(tkText):
 
         self.delete(1.0, 'end')
 
-    def get(self):
+    def get_text(self):
 
         # get method is for getting
         # all text from text widget
 
         return self.get(1.0, 'end')
 
-    def set(self, text):
+    def set_text(self, text):
 
         # set method is to set text in text widget
         # at first it will clear field

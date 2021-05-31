@@ -1,13 +1,13 @@
-# Import gv object from ntk.objects
+# Import gv object from snipp.objects
 # gv is a global var object which
 # can be used to set and get variables
 
-from ntk.objects import gv as gv
+from snipp.objects import gv as gv
 
-# Import connect and disconnect from ntk.db.conn
+# Import connect and disconnect from snipp.db.conn
 # these are used to connect disconnect database efficiently
 
-from ntk.db.conn import connect, disconnect
+from snipp.db.conn import connect, disconnect
 
 # import more libraries and modules
 # that's are used to manipulate os level implementation
@@ -16,6 +16,7 @@ import json, os, datetime, string, random, time
 
 
 # gdefault is get default
+
 
 def gdefault(val):
 
@@ -38,6 +39,7 @@ def gdefault(val):
 
 # gnull is get null
 
+
 def gnull(val):
 
     # gnull function is used to parse a sql string which
@@ -58,6 +60,7 @@ def gnull(val):
 
 
 # etic_dict is exact_table_info create and get and set all table info from database
+
 
 def etic_dict(cr=False):
 
@@ -109,6 +112,7 @@ def etic_dict(cr=False):
     disconnect(db)
 
 # validate is for validating column value when inserting or updating
+
 
 def validate(col, key, val):
 
@@ -307,6 +311,7 @@ def validate(col, key, val):
 
 # validate_table is for validating full table when inserting or updating
 
+
 def validate_table(table, kwargs, update=False):
 
     # validate_table function is used to validate full table info
@@ -388,6 +393,7 @@ def validate_table(table, kwargs, update=False):
 
 # Retrieve is a class to maintain select related query from table
 
+
 class Retrieve:
 
     # Retrieve class will be a instance, it's highly
@@ -417,11 +423,14 @@ class Retrieve:
 
         # next we are looping to execute select query
 
-        while done==0:
+        exist_limit = gv.try_limit
 
+        while exist_limit > 0:
             # we are looping while our query is not executed properly
 
             try:
+
+                exist_limit -= 1
 
                 # execute select query and get
                 # cursor query object from database
@@ -454,6 +463,10 @@ class Retrieve:
 
                 time.sleep(1)
 
+        if not done:
+            self.res['all'] = []
+            self.res['one'] = {}
+
         if db:
 
             # if new database is connected so
@@ -483,7 +496,7 @@ class Retrieve:
         # we assigned all result to result object before
         # so now we need to pass first element of it
 
-        return self.res['all'][0] if self.res['all'] else []
+        return self.res['all'][0] if self.res['all'] else {}
 
     def last(self):
 
@@ -491,9 +504,10 @@ class Retrieve:
         # we assigned all result to result object before
         # so now we need to pass last element of it
 
-        return self.res['all'][-1] if self.res['all'] else []
+        return self.res['all'][-1] if self.res['all'] else {}
 
 # QuerySet is a class to maintain CRUD query
+
 
 class QuerySet:
 
@@ -512,7 +526,7 @@ class QuerySet:
 
         self.table = table
 
-    def create(self, transaction=False, **kwargs):
+    def create(self, transaction=False, returning='id', **kwargs):
 
         # create method is used to manage insert query
         # is takes two parameters transaction and another
@@ -520,54 +534,62 @@ class QuerySet:
 
         # check if any column value is got
 
+        return_value = None
+
         if kwargs:
+            try:
+                # if column value is got let's loop into all kwargs items
 
-            # if column value is got let's loop into all kwargs items
+                for k, v in kwargs.items():
+                    # validate all column value if
+                    # any of column is getting unexpected data
+                    # it will be raised
 
-            for k,v in kwargs.items():
+                    validate(gv.models[self.table][k], k, v)
 
-                # validate all column value if
-                # any of column is getting unexpected data
-                # it will be raised
+                # after all validate full table data before inserting
+                # we will get keyword arguments object if everything
+                # is validated and set default
 
-                validate(gv.models[self.table][k], k, v)
+                kwargs = validate_table(self.table, kwargs)
 
-            # after all validate full table data before inserting
-            # we will get keyword arguments object if everything
-            # is validated and set default
+                # next generate column list string from all column passed
 
-            kwargs = validate_table(self.table, kwargs)
+                cls = ", ".join('%s' % k for k in kwargs.keys())
 
-            # next generate column list string from all column passed
+                # next generate value list string from all value passed
 
-            cls = ", ".join('%s'%k for k in kwargs.keys())
+                vls = ", ".join("'%s'" % k for k in kwargs.values())
 
-            # next generate value list string from all value passed
+                # next execute insert query to insert new value with defined columns
 
-            vls = ", ".join("'%s'"%k for k in kwargs.values())
+                gv.cr[self.table].execute("INSERT INTO {} ({}) VALUES({}) RETURNING {}".format(
+                                                            self.table,  # table name
+                                                            cls,  # columns string
+                                                            vls,  # values string
+                                                            returning
+                                                        )
+                                                    )
 
-            # next execute insert query to insert new value with defined columns
+                return_value = gv.cr[self.table].fetchone()
 
-            gv.cr[self.table].execute("INSERT INTO {} ({}) VALUES({})".format(
-                                                                    self.table, # table name
-                                                                    cls, # columns string
-                                                                    vls # values string
-                                                                )
-                                                            )
+                # check if transaction is allowed
 
-            # check if transaction is allowed
+                if not transaction:
+                    # if not transaction is allowed, let's execute commit to save it
 
-            if not transaction:
+                    gv.db[self.table].commit()
 
-                # if not transaction is allowed, let's execute commit to save it
+                # most important, clear cache of this table, because new record is inserted
 
-                gv.db[self.table].commit()
+                gv.cache[self.table] = {}
 
-            # most important, clear cache of this table, because new record is inserted
+            except Exception as e:
+                print('Row not inserted due to ', e, 'for {}'.format(kwargs))
 
-            gv.cache[self.table] = {}
+        return return_value
 
-    def update(self, transaction=False, where=False, **kwargs):
+    def update(self, transaction=False, where=False, returning=False, **kwargs):
 
         # update method is used to manage update query
         # is takes three parameters transaction, where and another
@@ -575,72 +597,84 @@ class QuerySet:
 
         # check if any column value is got
 
+        return_value = None
+
         if kwargs:
 
-            # check if where checking column is passed
+            try:
 
-            if where:
+                # check if where checking column is passed
 
-                # if where is passed, then generate as string
-                # to declare where query from keyword
+                if where:
 
-                where = "{} = '{}'".format(where, kwargs.pop(where))
+                    # if where is passed, then generate as string
+                    # to declare where query from keyword
 
-            else:
+                    where = "{} = '{}'".format(where, kwargs.pop(where))
 
-                # if not where is passed, then get first
-                # key value of keyword to make it
-                # where clause, and kwargs will be reset
+                else:
 
-                # get first element and rest of keywords
+                    # if not where is passed, then get first
+                    # key value of keyword to make it
+                    # where clause, and kwargs will be reset
 
-                (wh_k, wh_v), *kwargs = kwargs.items()
+                    # get first element and rest of keywords
 
-                # declare where query from first element
+                    (wh_k, wh_v), *kwargs = kwargs.items()
 
-                where, kwargs = "{} = '{}'".format(wh_k, wh_v), dict(kwargs)
+                    # declare where query from first element
 
+                    where, kwargs = "{} = '{}'".format(wh_k, wh_v), dict(kwargs)
 
-            # next loop into all keyword
+                # next loop into all keyword
 
-            for k,v in kwargs.items():
+                for k,v in kwargs.items():
 
-                # validate each of element by it's predefined types
+                    # validate each of element by it's predefined types
 
-                validate(gv.models[self.table][k], k, v)
+                    validate(gv.models[self.table][k], k, v)
 
-            # after that we need to validate whole table
-            # to validate all types
+                # after that we need to validate whole table
+                # to validate all types
 
-            kwargs = validate_table(self.table, kwargs, update=True)
+                kwargs = validate_table(self.table, kwargs, update=True)
 
-            # next define set values by combining all items in a string
+                # next define set values by combining all items in a string
 
-            sets = ", ".join("{} = '{}'".format(k,v) for k,v in kwargs.items())
+                sets = ", ".join("{} = '{}'".format(k,v) for k,v in kwargs.items())
 
-            # execute update query where we passing
-            # where sets and where position values
+                # execute update query where we passing
+                # where sets and where position values
 
-            gv.cr[self.table].execute("UPDATE {} SET {} WHERE {}".format(
-                                                                    self.table, # table name
-                                                                    sets, # sets string
-                                                                    where # where string
-                                                                )
-                                                            )
+                sql_statement = "UPDATE {} SET {} WHERE {}".format(self.table, sets, where)
 
-            # check if transaction is passed
+                if returning:
+                    sql_statement = sql_statement + " RETURNING {}".format(returning)
 
-            if not transaction:
+                gv.cr[self.table].execute(sql_statement)
 
-                # if transaction is not passed, then
-                # commit whole database
+                return_value = gv.cr[self.table].fetchone()
 
-                gv.db[self.table].commit()
+                # check if transaction is passed
 
-            # if row is updated, then
-            # clear table cache data because table data changed
+                if not transaction:
+                    if returning:
+                        gv.cr[self.table].execute("COMMIT")
 
-            gv.cache[self.table] = {}
+                    # if transaction is not passed, then
+                    # commit whole database
+
+                    gv.db[self.table].commit()
+
+                # if row is updated, then
+                # clear table cache data because table data changed
+
+                gv.cache[self.table] = {}
+
+            except Exception as e:
+                print('Row not updated due to ', e, 'for {}'.format(kwargs))
+
+        return return_value
 
     def create_all(self, all):
 
@@ -893,6 +927,7 @@ class QuerySet:
 
 # Model is a class to maintain Table Modeling System
 
+
 class Model:
 
     def __init__(self, name=False, *args, **kwargs):
@@ -917,19 +952,19 @@ class Model:
         #
         #
         #     data can be create by calling the
-        #     users.qset.create(email="test@ntk.com")
+        #     users.qset.create(email="test@snipp.com")
         #
         #
         #     data can be updated by calling the
-        #     sers.qset.update(where='email', email="test@ntk.com", is_active='0')
+        #     sers.qset.update(where='email', email="test@snipp.com", is_active='0')
         #
         #
         #     data can be get by doing
-        #     user = users.qset.filter(email='test@ntk.com').first()
+        #     user = users.qset.filter(email='test@snipp.com').first()
         #
         #
         #     data can be deleted by doing
-        #     users.qset.delete(email='test@ntk.com')
+        #     users.qset.delete(email='test@snipp.com')
         #
         #
         #     table can flash by doing

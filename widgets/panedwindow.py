@@ -2,9 +2,9 @@
 
 from tkinter import PanedWindow as tkPanedWindow
 
-# Import all util from ntk.utils
+# Import all util from snipp.utils
 
-from ntk.utils import *
+from snipp.utils import *
 
 class PanedWindow(tkPanedWindow):
 

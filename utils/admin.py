@@ -7,7 +7,7 @@
 
 # Import relevant libraries to use it for admin status get and set functions
 
-import sys, os, traceback, types, win32api, win32con, win32event, win32process, ctypes
+import sys, os, traceback, types, ctypes, win32api, win32con, win32event, win32process
 
 # Import shell execute module
 from win32com.shell.shell import ShellExecuteEx

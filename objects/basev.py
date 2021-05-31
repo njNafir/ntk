@@ -1,7 +1,7 @@
 # Import relevant libraries
 # Import global variable object
 
-from ntk.objects import gv
+from snipp.objects import gv
 
 # Assign base variables to use in application
 
@@ -22,29 +22,30 @@ def base_var():
     # database will be automatically unlocked after the timeout time
 
     gv.db_timeout = 10
+    gv.try_limit = 4
 
     # gv.check_same_thread is by default set to False, but you set it to True, if your application
     # doesn't need to much database call in multi threaded environment
 
     gv.check_same_thread = False
 
-    # gv.db is used by ntk backend, so you don't need to use it if you don't want to
+    # gv.db is used by snipp backend, so you don't need to use it if you don't want to
     # dive deeper into the db backend
 
     gv.db = {}
 
-    # gv.cr is also used by ntk backend, so you don't need to use it if you don't want to
+    # gv.cr is also used by snipp backend, so you don't need to use it if you don't want to
     # dive deeper into the db backend
 
     gv.cr = {}
 
-    # gv.cache is used by ntk backend for providing faster query, it will cache your database query result for certain
+    # gv.cache is used by snipp backend for providing faster query, it will cache your database query result for certain
     # amount of time and when you ask for same query again if it is exists in cache
     # it will not call to database again, instead it will return cache data
 
     gv.cache = {}
 
-    # gv.models is also used by ntk backend, so you don't need to use it if you don't want to
+    # gv.models is also used by snipp backend, so you don't need to use it if you don't want to
     # dive deeper into the db backend
 
     gv.models = {}

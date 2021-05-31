@@ -2,17 +2,14 @@
 
 from tkinter import Canvas as tkCanvas
 
-# Import all util from ntk.utils
+# Import all util from snipp.utils
 
-from ntk.utils import *
+from snipp.utils import *
 
 # Import pyperclip
 # pyperclip is used to copy and paste canvas element text when it's selected
 
-try:
-    import pyperclip
-except:
-    print('pyperclip not found, it can be installed by\npip install pyperclip')
+import pyperclip
 
 class Canvas(tkCanvas):
 
@@ -32,7 +29,7 @@ class Canvas(tkCanvas):
     # and args to tkinter canvas
 
     # so if it cause an error most probably it's getting from tkinter canvas object
-    # see your all arguments and keywords is supporting by ntk Canvas or tkinter canvas
+    # see your all arguments and keywords is supporting by snipp Canvas or tkinter canvas
 
     def __init__(self,
                  root, # root is a master window to place this button into it

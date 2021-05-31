@@ -2,21 +2,22 @@
 
 from tkinter import Tk as tTk
 
-# Import all objects from ntk.objects
+# Import all objects from snipp.objects
 
-from ntk.objects import *
+from snipp.objects import *
 
-# Import all util from ntk.utils
+# Import all util from snipp.utils
 
-from ntk.utils import *
+from snipp.utils import *
 
 # Import os
 
 import os
 
-# Import ntk PanedWindow to use it as default middle window
+# Import snipp PanedWindow to use it as default middle window
 
-from ntk.widgets.panedwindow import PanedWindow
+from snipp.widgets.panedwindow import PanedWindow
+from tkinter import font
 
 # set base global variable so we can use these next time
 
@@ -43,7 +44,7 @@ class Tk(tTk):
     # see your all arguments and keywords is supporting by Tk or tkinter tk
 
     def __init__(self,
-                 title="ntk", # title to showing on top bar
+                 title="Main Window", # title to showing on top bar
                  resize_x=True, # resize x is to set horizontal resizable
                  resize_y=True, # resize y is to set vertical resizable
                  width=360, # tkinter window width
@@ -115,7 +116,7 @@ class Tk(tTk):
             # change state of tkinter window to zoomed
             # so it will force fit to screen
 
-            self.state("zoomed")
+            # self.state("zoomed")
 
         else:
 
@@ -151,23 +152,14 @@ class Tk(tTk):
 
         if not icon:
 
-            # if icon not passed, we can set a default icon in ntk
+            # if icon not passed, we can set a default icon in snipp
             # as tkinter window icon
-            
-            prefix = ""
-            suffix = "ico"
-            
-            if os.name != 'nt':
-                prefix = "@"
-                suffix = "xbm"
 
-            icon = prefix + os.path.join(os.path.dirname(os.path.dirname(__file__)), "icon.") + suffix
-        
-        gv.icon_path = icon
+            icon = os.path.join(os.path.dirname(os.path.dirname(__file__)), "icon.ico")
 
         # next we will set this icon in tkinter window top left
 
-        self.iconbitmap(icon)
+        # self.iconbitmap(icon)
 
         # set window title
 

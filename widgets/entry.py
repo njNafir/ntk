@@ -2,9 +2,9 @@
 
 from tkinter import Entry as tkEntry
 
-# Import all util from ntk.utils
+# Import all util from snipp.utils
 
-from ntk.utils import *
+from snipp.utils import *
 
 class Entry(tkEntry):
 

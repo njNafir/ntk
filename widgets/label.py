@@ -2,15 +2,13 @@
 
 from tkinter import Label as tkLabel
 
-# Import all util from ntk.utils
+# Import all util from snipp.utils
 
-from ntk.utils import *
+from snipp.utils import *
 
 # Import Image ImageTk from PIL
 
-try:
-    from PIL import Image, ImageTk
-except: pass
+from PIL import Image, ImageTk
 
 class Label(tkLabel):
 
@@ -34,7 +32,7 @@ class Label(tkLabel):
 
     def __init__(self,
                  root, # root is a master window to place this label into it
-                 text="ntk label", # label text value
+                 text="New label", # label text value
                  # bg="bg-light",
                  # fg="fg-dark",
                  var=None, # label text variable
