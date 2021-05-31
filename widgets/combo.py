@@ -20,7 +20,7 @@ class Combobox(ttkCombobox):
     # and args to tkinter combobox
 
     # so if it cause an error most probably it's getting from tkinter combobox object
-    # see your all arguments and keywords is supporting by snipp Combobox or tkinter combobox
+    # see your all arguments and keywords is supporting by ntk Combobox or tkinter combobox
 
     def __init__(self,
                  root, # root is a master window to place this combobox into it

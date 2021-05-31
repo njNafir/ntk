@@ -1,27 +1,27 @@
 # Import Tkinter Entry to use it and modify default
 
-from snipp.widgets.entry import Entry
+from ntk.widgets.entry import Entry
 
-# Import all util from snipp.utils
+# Import all util from ntk.utils
 
-from snipp.utils import *
+from ntk.utils import *
 
 # Import Tkinter Toplevel to use it for list window
 
-from snipp.widgets.toplevel import Toplevel
+from ntk.widgets.toplevel import Toplevel
 
 # Import Tkinter Toplevel to use it for list container
 
-from snipp.widgets.canvas import Canvas
-from snipp.widgets.button import Button
+from ntk.widgets.canvas import Canvas
+from ntk.widgets.button import Button
 
 
-# from snipp.widgets.scroller import Scrollbar
-# from snipp.widgets.tk import Tk
+# from ntk.widgets.scroller import Scrollbar
+# from ntk.widgets.tk import Tk
 
-# Import gv objects from snipp.objects
+# Import gv objects from ntk.objects
 
-from snipp.objects import gv
+from ntk.objects import gv
 
 
 class SelectBox(Entry):
@@ -42,7 +42,7 @@ class SelectBox(Entry):
     # and args to tkinter entry
 
     # so if it cause an error most probably it's getting from tkinter entry object
-    # see your all arguments and keywords is supporting by snipp Entry or tkinter Entry
+    # see your all arguments and keywords is supporting by ntk Entry or tkinter Entry
 
     # it contain a values parameter, which can be a list or tuple
     # this values will be rendered as a list which is

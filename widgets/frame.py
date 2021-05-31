@@ -2,9 +2,9 @@
 
 from tkinter import Frame as tkFrame
 
-# Import all util from snipp.utils
+# Import all util from ntk.utils
 
-from snipp.utils import *
+from ntk.utils import *
 
 class Frame(tkFrame):
 

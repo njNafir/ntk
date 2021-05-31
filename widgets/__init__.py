@@ -73,8 +73,8 @@ from .tk import Tk
 
 from .toplevel import Toplevel
 
-# Import utils from snipp.utils module
+# Import utils from ntk.utils module
 # So that all utils can be imported from widgets module
-# by doing from snipp.widgets import something or *
+# by doing from ntk.widgets import something or *
 
-from snipp.utils import *
+from ntk.utils import *

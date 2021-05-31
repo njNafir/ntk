@@ -2,21 +2,21 @@
 
 from tkinter import Tk as tTk
 
-# Import all objects from snipp.objects
+# Import all objects from ntk.objects
 
-from snipp.objects import *
+from ntk.objects import *
 
-# Import all util from snipp.utils
+# Import all util from ntk.utils
 
-from snipp.utils import *
+from ntk.utils import *
 
 # Import os
 
 import os
 
-# Import snipp PanedWindow to use it as default middle window
+# Import ntk PanedWindow to use it as default middle window
 
-from snipp.widgets.panedwindow import PanedWindow
+from ntk.widgets.panedwindow import PanedWindow
 from tkinter import font
 
 # set base global variable so we can use these next time
@@ -152,7 +152,7 @@ class Tk(tTk):
 
         if not icon:
 
-            # if icon not passed, we can set a default icon in snipp
+            # if icon not passed, we can set a default icon in ntk
             # as tkinter window icon
 
             icon = os.path.join(os.path.dirname(os.path.dirname(__file__)), "icon.ico")

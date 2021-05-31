@@ -2,9 +2,9 @@
 
 from PIL import Image as pilImage, ImageTk as pilImageTk
 
-# Import gv object from snipp
+# Import gv object from ntk
 
-from snipp.objects import gv
+from ntk.objects import gv
 
 # Import os
 
@@ -32,7 +32,7 @@ class ImageFile:
                  file=False, # file url
                  resize=False, # resize param is a tuple acceptable by PIL resize
                  format="png", # get and save images in this file format
-                 pillow=True, # if pillow is False, snipp will be return a object which opened by tkinter PhotoImage
+                 pillow=True, # if pillow is False, ntk will be return a object which opened by tkinter PhotoImage
                  *args, **kwargs # extra *args and **kwargs will not be uses
             ):
 

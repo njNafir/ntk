@@ -1,6 +1,6 @@
 # Import global variable object
 
-from snipp.objects import gv
+from ntk.objects import gv
 
 # BG Colors to set higher level color scheme for UI Interface
 # Every color can be set by their unique name
@@ -11,7 +11,7 @@ def bg_colors():
     # So it's highly recommended color scheme for UI
 
     # Calling this function will return this dictionary object as all supported color scheme
-    # It can be imported from snipp.utils import bg_colors
+    # It can be imported from ntk.utils import bg_colors
 
     # This only contain background colors so It recommend to use this color to background coloring
 
@@ -33,7 +33,7 @@ def fg_colors():
     # So it's highly recommended color scheme for UI
 
     # Calling this function will return this dictionary object as all supported color scheme
-    # It can be imported from snipp.utils import fg_colors
+    # It can be imported from ntk.utils import fg_colors
 
     # This only contain foreground colors so It recommend to use this color to foreground coloring
 
@@ -51,7 +51,7 @@ def fg_colors():
 
 def color(name):
 
-    # color util is most used custom util in snipp
+    # color util is most used custom util in ntk
     # this util will take a color name or alias
 
     # if it is matching with any of foreground or background color name

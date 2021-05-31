@@ -1,13 +1,13 @@
-# Import gv object from snipp.objects
+# Import gv object from ntk.objects
 # gv is a global var object which
 # can be used to set and get variables
 
-from snipp.objects import gv as gv
+from ntk.objects import gv as gv
 
-# Import connect and disconnect from snipp.db.conn
+# Import connect and disconnect from ntk.db.conn
 # these are used to connect disconnect database efficiently
 
-from snipp.db.conn import connect, disconnect
+from ntk.db.conn import connect, disconnect
 
 # import more libraries and modules
 # that's are used to manipulate os level implementation
@@ -873,7 +873,7 @@ class QuerySet:
 
                 # if q is not defined, let's check kwargs is available
                 # if keyword is available,
-                # this snippet will parse a query for this keyword
+                # this ntket will parse a query for this keyword
 
                 # set sstr sub query for joining to main query
                 # make sure to checking like or equal search in database table
@@ -952,19 +952,19 @@ class Model:
         #
         #
         #     data can be create by calling the
-        #     users.qset.create(email="test@snipp.com")
+        #     users.qset.create(email="test@ntk.com")
         #
         #
         #     data can be updated by calling the
-        #     sers.qset.update(where='email', email="test@snipp.com", is_active='0')
+        #     sers.qset.update(where='email', email="test@ntk.com", is_active='0')
         #
         #
         #     data can be get by doing
-        #     user = users.qset.filter(email='test@snipp.com').first()
+        #     user = users.qset.filter(email='test@ntk.com').first()
         #
         #
         #     data can be deleted by doing
-        #     users.qset.delete(email='test@snipp.com')
+        #     users.qset.delete(email='test@ntk.com')
         #
         #
         #     table can flash by doing

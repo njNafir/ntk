@@ -2,9 +2,9 @@
 
 from tkinter.ttk import Notebook as tkNotebook
 
-# Import all util from snipp.utils
+# Import all util from ntk.utils
 
-from snipp.utils import *
+from ntk.utils import *
 
 # Import ttk from tkinter
 

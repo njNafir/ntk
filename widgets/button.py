@@ -2,9 +2,9 @@
 
 from tkinter import Button as tkButton
 
-# Import all util from snipp.utils
+# Import all util from ntk.utils
 
-from snipp.utils import *
+from ntk.utils import *
 
 class Button(tkButton):
 
@@ -24,7 +24,7 @@ class Button(tkButton):
     # and args to tkinter button
 
     # so if it cause an error most probably it's getting from tkinter button object
-    # see your all arguments and keywords is supporting by snipp Button or tkinter button
+    # see your all arguments and keywords is supporting by ntk Button or tkinter button
 
     def __init__(self,
                  root, # root is a master window to place this button into it

@@ -4,10 +4,10 @@ import sqlite3
 
 # Import global var object
 
-from snipp.objects import gv
+from ntk.objects import gv
 
 
-# def row_factory(cur, row):
+def row_factory(cur, row):
 
     # row factory function to convert all query result into dictionary object
     # it's expecting to params cursor object and result row

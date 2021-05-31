@@ -2,13 +2,13 @@
 
 from tkinter import Toplevel as tkToplevel
 
-# Import all objects from snipp.objects
+# Import all objects from ntk.objects
 
-from snipp.objects import *
+from ntk.objects import *
 
-# Import all util from snipp.utils
+# Import all util from ntk.utils
 
-from snipp.utils import *
+from ntk.utils import *
 
 class Toplevel(tkToplevel):
 
