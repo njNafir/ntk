@@ -1,0 +1,4 @@
+include ntk/arrow.png
+include ntk/icon.ico
+include ntk/icon.xbm
+include ntk/__init__.py
